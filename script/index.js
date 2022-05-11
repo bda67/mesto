@@ -1,13 +1,12 @@
-let openPopup = document.querySelector('.button__edit');
-let closePopup = document.querySelector('.popup__button_close');
+let openPopup = document.querySelector('.profile__button-edit');
+let closePopup = document.querySelector('.popup__button-close');
 let popup = document.querySelector('.popup');
 let formElement = popup.querySelector('.popup__form');
 let profileName = document.querySelector('.profile__name');
 let profileJob = document.querySelector('.profile__bio');
-let nameInput = formElement.querySelector('.popup__input__name');
-let jobInput = formElement.querySelector('.popup__input__bio');
-let submitButton = popup.querySelector('.popup__button_submit');
-const likeButton = document.querySelectorAll('.button__like');
+let nameInput = formElement.querySelector('.popup__input-name');
+let jobInput = formElement.querySelector('.popup__input-bio');
+const likeButton = document.querySelectorAll('.element__button-like');
 
 openPopup.addEventListener('click', function(evt){
     evt.preventDefault();

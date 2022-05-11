@@ -1,15 +1,23 @@
-.button__edit{
+.profile__button-edit{
     width: 24px;
     height: 24px;
     margin-left: 18px;
     padding: 0;
+    background-color: transparent;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.profile__button-edit:hover{
+    opacity: .6;
+    transition: opacity .2 ease;
 }
 
 @media screen and (max-width:1023px) {
-    .button__edit{
+    .profile__button-edit{
         width: 18px;
         height: 18px;
         margin-left: 10px;
         justify-self: center;
+
     } 
 }
