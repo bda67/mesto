@@ -1,0 +1,8 @@
+/*@import url(./__logo/header__logo.css);*/
+
+.header{
+    border-bottom-width: 1px;
+    border-bottom-color: #545454;
+    border-bottom-style: solid;
+}
+

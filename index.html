@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mesto</title>
+        <link rel="icon" href="./images/black__logopng.png">
+        <link rel="stylesheet" href="./pages/index.css">
+    </head>  
+    <body class="page">
+        <main>
+            <header class="header">
+                <img class="header__logo" src="./images/logo.svg" alt="Латиницей написано слово место и Россия">
+            </header>
+            <section class="profile">
+                <img class="profile__photo" src="./images/jacque-yves_cousteau.jpg" alt="Жак-Ив Кусто в красной шапке">
+                <div class="profile__info">
+                    <div class="profile__wrapper">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <button class="button button__edit" type="button" id="open__popup__edit">
+                            <img class="button__img_edit" src="./images/edit.svg" alt="значок карандаша">
+                        </button>
+                    </div>    
+                    <p class="profile__bio">Исследователь океана</p>
+                </div>
+                <button class="button button__add" type="button">
+                    <img class="button__img_add" src="./images/add.svg" alt="Знак плюс">
+                </button>
+            </section>
+            <section class="elements">
+                <ul class="element__list">
+                <li class="element__item">
+                    <img class="element__image" src="./images/karachaevsk.jpg" alt="Старая церковь в горах">
+                    <div class="element__card">
+                        <h2 class="element__name">Карачаевск</h2>
+                        <button class="button button__like"></button>
+                    </div>
+                </li>
+                <li class="element__item">
+                    <img class="element__image" src="./images/elbrus.jpg" alt="#">
+                    <div class="element__card">
+                        <h2 class="element__name">Гора Эльбрус</h2>
+                        <button class="button button__like"></button>
+                    </div>
+                </li>
+                <li class="element__item">
+                    <img class="element__image" src="./images/pescherskiy_vodopad.jpg" alt="#">
+                    
+                    <div class="element__card">
+                        <h2 class="element__name">Пещерский водопад</h2>
+                        <button class="button button__like"></button>
+                    </div>
+                </li>
+                <li class="element__item">
+                    <img class="element__image" src="./images/dombai.jpg" alt="#">
+                    <div class="element__card">
+                        <h2 class="element__name">Домбай</h2>
+                        <button class="button button__like"></button>
+                    </div>
+                </li>
+                <li class="element__item">
+                    <img class="element__image" src="./images/poluostrov_ribachiy.jpg" alt="#">
+                    <div class="element__card">
+                        <h2 class="element__name">Полуостров Рыбачий</h2>
+                        <button class="button button__like"></button>
+                    </div>
+                </li>
+                <li class="element__item">
+                    <img class="element__image" src="./images/poluostrov_sredniy.jpg" alt="#">
+                    <div class="element__card">
+                        <h2 class="element__name">Полуостров Средний</h2>
+                        <button class="button button__like"></button>
+                    </div>
+                </li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+        </footer>
+            <div class="popup popup__edit">
+                <div class="popup__container">
+                    <form class="popup__form">
+                        <button class="popup__button popup__button_close" type="button">
+                            <img class="popup__button_close_img" alt="крестик" src="./images/Close__Icon.svg">
+                        </button>
+                        <h2 class="popup__title">Редактировать профиль</h2>
+                        <fieldset class="popup__profile-info">    
+                            <input class="popup__input popup__input__name" type="text">
+                            <input class="popup__input popup__input__bio" type="text">
+                        </fieldset>
+                        <button class="popup__button popup__button_submit" type="submit">Сохранить</button>
+                    </form>
+                </div>    
+            </div>
+            <script defer src="./script/index.js"></script>
+    </body>
+</html>
