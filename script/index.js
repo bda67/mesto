@@ -4,28 +4,24 @@ let popup = document.querySelector('.popup');
 let formElement = popup.querySelector('.popup__form');
 let profileName = document.querySelector('.profile__name');
 let profileJob = document.querySelector('.profile__bio');
-let nameInput = formElement.querySelector('.popup__input-name');
-let jobInput = formElement.querySelector('.popup__input-bio');
+let nameInput = formElement.querySelector('.popup__input_type_name');
+let jobInput = formElement.querySelector('.popup__input_type_bio');
 const likeButton = document.querySelectorAll('.element__button-like');
 
-openPopup.addEventListener('click', function(evt){
+// строчки инпута дублируют инфу из профиля при открытии
+nameInput.value = profileName.textContent;
+jobInput.value = profileJob.textContent;
+
+// функции отрытия и закрытия попапа
+function openEdit(evt){
     evt.preventDefault();
-    popup.classList.add('popup__opened'); 
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileJob.textContent;
-});
+    popup.classList.add('popup_opened');   
+}
+function closeEdit(){
+    popup.classList.remove('popup_opened');
+}
 
-closePopup.addEventListener('click', function(){
-    popup.classList.remove('popup__opened');
-});
-
-
-for (const button__like of likeButton){
-    button__like.addEventListener('click', function(e) {
-        button__like.classList.add('activated');
-      });
-};
-
+// функция редактирования данных из формы в профиль сохр
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
     
@@ -34,9 +30,11 @@ function formSubmitHandler (evt) {
    
     profileName.textContent = nameInputValue;
     profileJob.textContent = jobInputValue;
+
+    closeEdit()
 };
 
+// слушатели
 formElement.addEventListener('submit', formSubmitHandler);
-
-
-
+openPopup.addEventListener('click', openEdit);
+closePopup.addEventListener('click', closeEdit);

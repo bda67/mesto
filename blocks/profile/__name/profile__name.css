@@ -4,6 +4,10 @@
     line-height: 48px;
     margin: 0;
     margin-bottom: 10px;
+    max-width: 294px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     }
 
     @media screen and (max-width: 1023px) {
@@ -12,7 +16,7 @@
             line-height: 33px;
             margin-bottom: 0;
             text-align: center;
-            /*padding-left: 26px;*/
+            max-width: 200px;
         }
         
     }
