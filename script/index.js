@@ -8,14 +8,12 @@ let nameInput = formElement.querySelector('.popup__input_type_name');
 let jobInput = formElement.querySelector('.popup__input_type_bio');
 const likeButton = document.querySelectorAll('.element__button-like');
 
-// строчки инпута дублируют инфу из профиля при открытии
-nameInput.value = profileName.textContent;
-jobInput.value = profileJob.textContent;
-
 // функции отрытия и закрытия попапа
 function openEdit(evt){
     evt.preventDefault();
-    popup.classList.add('popup_opened');   
+    popup.classList.add('popup_opened');
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent; 
 }
 function closeEdit(){
     popup.classList.remove('popup_opened');
