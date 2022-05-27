@@ -29,56 +29,24 @@
                 </section>
                 <section class="elements">
                     <ul class="element">
-                        <li class="element__item">
-                            <img class="element__image" src="./images/karachaevsk.jpg" alt="Старая церковь в горах">
-                            <div class="element__card">
-                                <h2 class="element__name">Карачаевск</h2>
-                                <button class="element__button-like" type="button"></button>
-                            </div>
-                        </li>
-                        <li class="element__item">
-                            <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-                            <div class="element__card">
-                                <h2 class="element__name">Гора Эльбрус</h2>
-                                <button class="element__button-like" type="button"></button>
-                            </div>
-                        </li>
-                        <li class="element__item">
-                            <img class="element__image" src="./images/pescherskiy_vodopad.jpg" alt="Вид сверху водопада">
-                            
-                            <div class="element__card">
-                                <h2 class="element__name">Пещерский водопад</h2>
-                                <button class="element__button-like" type="button"></button>
-                            </div>
-                        </li>
-                        <li class="element__item">
-                            <img class="element__image" src="./images/dombai.jpg" alt="Вид на горы">
-                            <div class="element__card">
-                                <h2 class="element__name">Домбай</h2>
-                                <button class="element__button-like" type="button"></button>
-                            </div>
-                        </li>
-                        <li class="element__item">
-                            <img class="element__image" src="./images/poluostrov_ribachiy.jpg" alt="На переднем плане желтые цветы а сзади река уходящая вдаль">
-                            <div class="element__card">
-                                <h2 class="element__name">Полуостров Рыбачий</h2>
-                                <button class="element__button-like" type="button"></button>
-                            </div>
-                        </li>
-                        <li class="element__item">
-                            <img class="element__image" src="./images/poluostrov_sredniy.jpg" alt="Полуостров Средний">
-                            <div class="element__card">
-                                <h2 class="element__name">Полуостров Средний</h2>
-                                <button class="element__button-like" type="button"></button>
-                            </div>
-                        </li>
+
                     </ul>
                 </section>
             </main>
         <footer class="footer">
             <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
         </footer>
-            <div class="popup">
+            <template class="template">
+                <li class="element__item">
+                    <img class="element__image" scr="#" alt="#"> 
+                    <button class="element__button-delete" type="button"></button>
+                    <div class="element__card">
+                        <h2 class="element__name">Название места</h2>
+                        <button class="element__button-like" type="button"></button>
+                    </div>
+                </li>
+            </template>
+            <div class="popup popup_type_profile">
                 <div class="popup__container"> 
                     <button class="popup__button-close" type="button">
                         <img class="popup__button-img" alt="крестик" src="./images/Close__Icon.svg">
@@ -90,9 +58,34 @@
                                 <input class="popup__input popup__input_type_bio" type="text" name="bio">
                             </fieldset>
                             <button class="popup__button-submit" type="submit">Сохранить</button>
-                        </form> 
-                       
+                        </form>    
                 </div>    
+            </div>
+            <div class="popup popup_type_card">
+                <div class="popup__container"> 
+                    <button class="popup__button-close" type="button">
+                        <img class="popup__button-img" alt="крестик" src="./images/Close__Icon.svg">
+                    </button>
+                        <form class="popup__form" name="cardForm">
+                            <h2 class="popup__title">Новое место</h2>
+                            <fieldset class="popup__profile-info">    
+                                <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Название">
+                                <input class="popup__input popup__input_type_bio" type="text" name="bio" placeholder="Ссылка на картинку">
+                            </fieldset>
+                            <button class="popup__button-submit" type="submit">Создать</button>
+                        </form>    
+                </div>    
+            </div>
+            <div class="popup popup_type_picture">
+                <div class="popup__container-picture">
+                    <button class="popup__button-close popup__button-close_fig" type="button">
+                        <img class="popup__button-img" alt="крестик" src="./images/Close__Icon.svg">
+                    </button>
+                    <figure class="popup__fig">
+                        <img class="popup__picture" src="#" alt="#">
+                        <figcaption class="popup__caption"></figcaption>
+                    </figure>
+                </div>
             </div>
             <script defer src="./script/index.js"></script>
     </body>

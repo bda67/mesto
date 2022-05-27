@@ -1,0 +1,15 @@
+.popup__button-close_fig {
+    top: 8px;
+    right: 8px;
+    position: relative;
+    height: 32px;
+    width: 32px;
+    align-self: flex-end;
+}
+
+@media screen and (max-width: 650px) {
+    .popup__button-close_fig {
+        top: 12px;
+        right: 34px;
+    }
+}

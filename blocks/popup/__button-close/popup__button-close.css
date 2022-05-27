@@ -6,6 +6,8 @@
     border: none;
     padding: 0;
     cursor: pointer;
+    height: 32px;
+    width: 32px;
 }
 .popup__button-close:hover{
     opacity: .6;
