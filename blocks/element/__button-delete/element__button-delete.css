@@ -10,6 +10,7 @@
     top: 20px;
     right: 20px;
     justify-self: flex-end;
+    cursor: pointer;
 }
 .element__button-delete:hover{
     opacity: .6;
