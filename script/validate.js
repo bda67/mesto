@@ -42,23 +42,19 @@ const toggleButtonState = (inputList, buttonElement, objectKey) => {
   if (hasInvalidInput(inputList)) {
     //если хотя бы одно поле невалидно, то надо откл кнопку
     buttonElement.classList.add(objectKey.inactiveButtonClass)
-    buttonElement.setAttribute("disabled", true)
+    buttonElement.setAttribute('disabled', true)
   } else {
     // если все поля валидны, то активировать кнопку
     buttonElement.classList.remove(objectKey.inactiveButtonClass)
-    buttonElement.removeAttribute("disabled")
+    buttonElement.removeAttribute('disabled')
   }
 };
 
 // Слушатель событий всех инпутов внутри формы
 const setEventListeners = (formElement, objectKey) => {
-  const inputList = Array.from(
-    formElement.querySelectorAll(objectKey.inputSelector)
-  ) // массив всех инпутов формы
-  const buttonElement = formElement.querySelector(
-    objectKey.submitButtonSelector
-  ) // находим кнопку внутри формы
-  //toggleButtonState(inputList, buttonElement, objectKey);
+  const inputList = Array.from(formElement.querySelectorAll(objectKey.inputSelector)) // массив всех инпутов формы
+  const buttonElement = formElement.querySelector(objectKey.submitButtonSelector) // находим кнопку внутри формы
+  toggleButtonState(inputList, buttonElement, objectKey);
   inputList.forEach((inputElement) => {
     // Обходим все инпуты и проверяем их валидность во время ввода текста
     inputElement.addEventListener("input", () => {

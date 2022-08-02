@@ -2,4 +2,7 @@
     background-color: white;
     border-radius: 10px;
     position: relative;
+    height: 362px;
+    display: flex;
+    flex-direction: column;
 }
