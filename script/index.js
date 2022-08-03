@@ -12,6 +12,7 @@ const jobInput = formElementEdit.querySelector(".popup__input_type_bio");
 const popupCard = document.querySelector(".popup_type_card");
 const buttonOpenPopupCard = document.querySelector(".profile__button-add");
 const buttonClosePopupCard = popupCard.querySelector(".popup__button-close");
+const buttonSubmitCardForm = popupCard.querySelector(".popup__button-submit");
 const formElementCard = popupCard.querySelector(".popup__form");
 const cardNameInput = formElementCard.querySelector(".popup__input_type_name");
 const cardLinkInput = formElementCard.querySelector(".popup__input_type_bio");
@@ -76,7 +77,10 @@ const closePopup = (popupAny) => {
   document.removeEventListener("keydown", closePopupEsc)
 };
 
-
+const disactivateSubmitButton = () => {
+  buttonSubmitCardForm.setAttribute('disabled', true)
+  buttonSubmitCardForm.classList.add('popup__button-submit_disabled')
+};
 
 const createCard = ({ link, name }) => {
   const cardTemplate = document.querySelector(".template").content
@@ -127,6 +131,7 @@ formElementCard.addEventListener("submit", (evt) => {
   })
   cardContainer.prepend(newCard)
   closePopup(popupCard)
+
 });
 
 // закрытие на оверлей
@@ -172,7 +177,7 @@ buttonClosePopupProfile.addEventListener("click", () => {
 buttonOpenPopupCard.addEventListener("click", () => {
   openPopup(popupCard)
   popupAddForm.reset();
-
+  disactivateSubmitButton(buttonSubmitCardForm);
 });
 
 buttonClosePopupCard.addEventListener("click", () => {

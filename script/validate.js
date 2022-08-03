@@ -64,6 +64,7 @@ const setEventListeners = (formElement, objectKey) => {
   })
 };
 
+
 // Добавление обработчиков всем формам
 const enableValidation = (objectKey) => {
   const formList = Array.from(document.querySelectorAll(objectKey.formSelector)) // массив всех форм
@@ -75,6 +76,15 @@ const enableValidation = (objectKey) => {
   })
 };
 
+/*const disactivatePopupButton = (buttonElement, objectKey) => {
+  buttonElement.classList.add(objectKey.inactiveButtonClass)
+  buttonElement.setAttribute('disabled', true)
+};
+
+buttonOpenPopupCard.addEventListener("click", () => {
+  disactivatePopupButton(buttonElement)
+})*/
+
 // Объявляем функцию
 enableValidation({
   formSelector: ".popup__form",
@@ -84,3 +94,4 @@ enableValidation({
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__input-error_active",
 });
+
