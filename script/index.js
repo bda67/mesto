@@ -80,8 +80,8 @@ function closePopupEsc(evt) {
 buttonOpenPopupCard.addEventListener("click", () => {
   openPopup(popupCard)
   popupAddForm.reset();
-  FormAddValidator.resetFormErrors();
-  FormAddValidator.disableSubmitButton();
+  validatorAddCard.resetFormErrors();
+  validatorAddCard.disableSubmitButton();
 });
 
 buttonClosePopupCard.addEventListener("click", () => {
@@ -90,8 +90,8 @@ buttonClosePopupCard.addEventListener("click", () => {
 
 // создание карточек
 function createCard(item) {
- const data = { name: item.name, link: item.link };
- const card = new Card (data, templateSelector, openPopupCard);
+ const cardData = { name: item.name, link: item.link };
+ const card = new Card (cardData, templateSelector, openPopupCard);
  return card.generateCard()
 };
 
@@ -103,23 +103,19 @@ initialCards.forEach((item) => {
   renderCard(createCard(item))
 });
 
-function newCard() {
+function handleSumbitAddForm(evt) {
+  evt.preventDefault();
   renderCard(createCard({
     name: cardNameInput.value,
     link: cardLinkInput.value
-  }))
-}
-
-function handleSumbitAddForm(evt) {
-  evt.preventDefault();
-  newCard(); closePopup(popupCard)
+  })); closePopup(popupCard)
 };
 
 popupAddForm.addEventListener('submit', handleSumbitAddForm);
 
 //валидация формы
-const FormAddValidator = new FormValidator (popupCard, config);
-FormAddValidator.enableValidation();
+const validatorAddCard = new FormValidator (popupCard, config);
+validatorAddCard.enableValidation();
 
 // ФОРМА РЕДАКТИРОВАНИЯ ПРОФИЛЯ
 //открытие попапа редактивроания
@@ -127,7 +123,7 @@ buttonOpenPopupProfile.addEventListener("click", () => {
   openPopup(popupEdit)
   nameInput.value = profileName.textContent
   jobInput.value = profileJob.textContent
-  FormEditValidator.resetFormErrors()
+  validatorEditProfile.resetFormErrors()
 });
 buttonClosePopupProfile.addEventListener("click", () => {
   closePopup(popupEdit)
@@ -141,8 +137,8 @@ function handleSumbitEditForm(evt) {
 // событие сабмита
 formElementEdit.addEventListener("submit", handleSumbitEditForm);
 // валидация формы
-const FormEditValidator = new FormValidator (formElementEdit, config);
-FormEditValidator.enableValidation();
+const validatorEditProfile = new FormValidator (formElementEdit, config);
+validatorEditProfile.enableValidation();
 
 
 

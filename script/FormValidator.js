@@ -60,10 +60,10 @@ export class FormValidator {
     _setEventListeners() {
         this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector)) // массив всех инпутов формы
         this._toggleButtonState();
-        this._inputList.forEach((inputSelector) => {
+        this._inputList.forEach((inputElement) => {
         // Обходим все инпуты и проверяем их валидность во время ввода текста
-        inputSelector.addEventListener("input", () => {
-            this._checkInputValidity(inputSelector)
+        inputElement.addEventListener("input", () => {
+            this._checkInputValidity(inputElement)
             this._toggleButtonState()
         });
         })
