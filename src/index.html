@@ -5,26 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mesto</title>
         <link rel="icon" href="./images/black__logopng.png">
-        <link rel="stylesheet" href="./pages/index.css">
-    </head>  
+    </head>
     <body class="page">
         <header class="header">
-            <img class="header__logo" src="./images/logo.svg" alt="Латиницей написано слово место и Россия">
+            <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Латиницей написано слово место и Россия">
         </header>
             <main>
                 <section class="profile">
-                    <img class="profile__photo" src="./images/jacque-yves_cousteau.jpg" alt="Жак-Ив Кусто в красной шапке">
+                    <img class="profile__photo" src="<%=require('./images/jacque-yves_cousteau.jpg')%>" alt="Жак-Ив Кусто в красной шапке">
                     <div class="profile__info">
                         <div class="profile__wrapper">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
                             <button class="profile__button-edit" type="button">
-                                <img class="profile__button-img" src="./images/edit.svg" alt="значок карандаша">
+                                <img class="profile__button-img" src="<%=require('./images/edit.svg')%>" alt="значок карандаша">
                             </button>
                         </div>    
                         <p class="profile__bio">Исследователь океана</p>
                     </div>
                     <button class="profile__button-add" type="button">
-                        <img class="profile__button-img-add" src="./images/add.svg" alt="Знак плюс">
+                        <img class="profile__button-img-add" src="<%=require('./images/add.svg')%>" alt="Знак плюс">
                     </button>
                 </section>
                 <section class="elements">
@@ -49,7 +48,7 @@
             <div class="popup popup_type_profile">
                 <div class="popup__container"> 
                     <button class="popup__button-close" type="button">
-                        <img class="popup__button-img" alt="крестик" src="./images/Close__Icon.svg">
+                        <img class="popup__button-img" alt="крестик" src="<%=require('./images/Close__Icon.svg')%>">
                     </button>
                         <form class="popup__form popup__form_edit" name="editForm" novalidate>
                             <h2 class="popup__title">Редактировать профиль</h2>
@@ -66,7 +65,7 @@
             <div class="popup popup_type_card">
                 <div class="popup__container"> 
                     <button class="popup__button-close" type="button">
-                        <img class="popup__button-img" alt="крестик" src="./images/Close__Icon.svg">
+                        <img class="popup__button-img" alt="крестик" src="<%=require('./images/Close__Icon.svg')%>">
                     </button>
                         <form class="popup__form popup__form_add" name="cardForm" novalidate>
                             <h2 class="popup__title">Новое место</h2>
@@ -83,7 +82,7 @@
             <div class="popup popup_type_picture">
                 <div class="popup__container-picture">
                     <button class="popup__button-close popup__button-close_fig" type="button">
-                        <img class="popup__button-img" alt="крестик" src="./images/Close__Icon.svg">
+                        <img class="popup__button-img" alt="крестик" src="<%=require('./images/Close__Icon.svg')%>">
                     </button>
                     <figure class="popup__fig">
                         <img class="popup__picture" src="#" alt="#">
@@ -91,10 +90,5 @@
                     </figure>
                 </div>
             </div>
-            <script type="module" src="./script/index.js"></script>
-            <script type="module" src="./script/data.js"></script>
-            <script type="module" src="./script/Card.js"></script>
-            <script type="module" src="./script/FormValidator.js"></script> 
-            
     </body>
 </html>

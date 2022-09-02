@@ -1,13 +1,14 @@
-import { Card } from "./Card.js";
-import { FormValidator } from "./FormValidator.js";
-import { Section } from "./Section.js";
-import { UserInfo } from './UserInfo.js'
-import { PopupWithForm } from "./PopupWithForm.js";
-import { PopupWithImage } from "./PopupWithImage.js";
+import "./index.css";
+import { Card } from "../script/components/Card.js";
+import { FormValidator } from "../script/components/FormValidator.js";
+import { Section } from "../script/components/Section.js";
+import { UserInfo } from '../script/components/UserInfo.js'
+import { PopupWithForm } from "../script/components/PopupWithForm.js";
+import { PopupWithImage } from "../script/components/PopupWithImage.js";
 import {  items, buttonOpenPopupProfile, profileName, profileJob, nameInput, jobInput, buttonOpenPopupCard,
   cardNameInput, cardLinkInput, popupAddForm, popupEditForm, config, templateSelector, containerSelector, 
   popupEditSelector, popupAddSelector, imagePopupSelector
-} from './data.js'; 
+} from '../script/utils/data.js'; 
 
 //Универсальная функция открытия/закрытия попапов
 // открытие картинки в карточке

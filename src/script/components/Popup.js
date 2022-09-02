@@ -1,4 +1,4 @@
-import { escKey } from "./data.js";
+import { escKey } from "../utils/data.js";
 export default class Popup{
     constructor (popupSelector) {
         this._popup = document.querySelector(popupSelector);
