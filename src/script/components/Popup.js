@@ -20,7 +20,7 @@ export default class Popup{
     setEventListeners() {
        this._popup.addEventListener('click', (evt) => {
         if(evt.target === evt.currentTarget || evt.target.classList.contains("popup__button-img")) {
-            this.close(this._popup);
+            this.close();
         }
        }) 
     }

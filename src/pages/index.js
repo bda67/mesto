@@ -43,10 +43,10 @@ popupEdit.setEventListeners();
 //форма добавления карточки
 const popupAddCard = new PopupWithForm({
   popupSelector: popupAddSelector,
-  handleFormSubmit: () => {
+  handleFormSubmit: (data) => {
     renderCard(createCard({
-      name: cardNameInput.value,
-      link: cardLinkInput.value
+      name: data.cardName,
+      link: data.link
     }));
   }
 })
@@ -82,9 +82,8 @@ validatorEditProfile.enableValidation();
 const cardList = new Section({
   items: items,
   renderer: (item) => {
-    const card = new Card(item, templateSelector, handleCardClick);
-    const newCard = card.generateCard();
-    cardList.addItem(newCard)
+    const card = createCard(item);
+    renderCard(card)
   }
 }, containerSelector);
 
