@@ -6,7 +6,6 @@ export class FormValidator {
   this._inactiveButtonClass = config.inactiveButtonClass;
   this._inputErrorClass = config.inputErrorClass;
   this._errorClass = config.errorClass;
-  this._errorList = this._form.querySelectorAll('.popup__input-error');
   this._button = this._form.querySelector(this._submitButtonSelector);
   }
   _showInputError(inputSelector, errorMessage) {
@@ -66,10 +65,6 @@ export class FormValidator {
     })
   };
   resetFormErrors() {
-      this._errorList.forEach(error => {
-        error.textContent = '';
-        error.classList.remove(this._errorClass)
-      })
       this._inputList.forEach(inputSelector => this._hideInputError(inputSelector))
   };
   enableValidation() {

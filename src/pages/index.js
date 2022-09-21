@@ -53,6 +53,9 @@ const popupEdit = new PopupWithForm({
       .catch(() => {
         console.log('Ошибка! Не получилось изменить данные профиля :(')
       })
+      .finally(() => {
+        popupEdit.saving(false);
+      })
   }
 });
 
@@ -80,12 +83,14 @@ const popupAddCard = new PopupWithForm({
     .catch(() => {
       console.log('Ошибка! Не удалось добавить вашу карточку :(')
     })
+    .finally(() => {
+      popupAddCard.saving(false);
+    })
   }
 })
 // открытие попапа добавления карточки
 buttonOpenPopupCard.addEventListener("click", () => {
   popupAddCard.open();
-  popupAddForm.reset();
   validatorAddCard.resetFormErrors();
   validatorAddCard.disableSubmitButton();
 });
@@ -103,6 +108,9 @@ const popupAvatar = new PopupWithForm({
       })
       .catch(() => {
         console.log('Ошибка! Не удалось поменять аватар :(')
+      })
+      .finally(() => {
+        popupAvatar.saving(false);
       })
   }
 });
@@ -130,7 +138,7 @@ function createCard(data) {
         popupWithImage.open(name, link)
       },
       handleDeleteBtn: (data) => {
-        popupDelete.setWaitSubmit((evt) => {
+        popupDelete.setConfirmSubmit((evt) => {
           evt.preventDefault();
           api.deleteIdCard(data._id)
             .then(() => {

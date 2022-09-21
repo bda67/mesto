@@ -84,7 +84,7 @@
         this._handleDeleteBtn(this._data)
     });
     this._buttonLike.addEventListener('click', (evt) => {
-        if(this._element.querySelector('.element__button-like').classList.contains('element__button-like_activated')) {
+        if(this._buttonLike.classList.contains('element__button-like_activated')) {
           this._putDislike(evt);
         } else {
           this._putLike(evt);
